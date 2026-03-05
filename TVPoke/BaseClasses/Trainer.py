@@ -12,3 +12,4 @@ class Trainer:
         for poke in self.pokemon:
             if poke.hp <= 0:
                 self.pokemon.remove(poke)
+                
