@@ -13,7 +13,9 @@ class BattleScreen(Screen):
         ]
         
     def elementsToDisplay(self):
-        self.elements = []
+        self.elements = [
+            ...
+        ]
 
         y = 0
         #two rows of three
