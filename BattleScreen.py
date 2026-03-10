@@ -33,13 +33,13 @@ class BattleScreen(Screen):
 
         y = 50
         x = 10
-        for poke in self.trainers[0]:
+        for poke in self.trainers[1]:
             self.elements.append(Image(x, y), 10, 10, poke.img)
             x += 10
 
         y = 50
         x = 60
-        for poke in self.trainers[1]:
+        for poke in self.trainers[2]:
             self.elements.append(Image(x, y), 10, 10, poke.img)
             x += 10
                 
