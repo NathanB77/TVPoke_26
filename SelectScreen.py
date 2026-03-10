@@ -20,8 +20,9 @@ class SelectScreen(Screen):
 
     def elementsToDisplay(self):
         self.elements = [ 
+            Image((50,50), 100, 100, './imgs/Choose.png'),
             Label((25, 95), 50, 10, "Choose your pokemon!\nPlayer " + str(self.state["trainerIndex"] + 1), 24),
-            Image((50,50), 100, 100, './imgs/Choose.png')
+    
         ]
         itemsPerRow = 3
         rowsOfItems = 3
