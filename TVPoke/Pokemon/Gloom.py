@@ -1,4 +1,4 @@
-from TVPoke.BaseClasses.PokeTypes import Grass, Poison
+from TVPoke.BaseClasses.PokeTypes import Poison
 from TVPoke.BaseClasses.Move import Move
 
 class Gloom(Poison):
