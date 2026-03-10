@@ -8,14 +8,13 @@ class BattleScreen(Screen):
 
     def addTrainers(self, trainer1Poke, trainer2Poke):
         self.trainers = [
-            Image((50, 50), 100, 100, './imgs/battlescreen.png'),
             Trainer(trainer1Poke),
             Trainer(trainer2Poke)
         ]
         
     def elementsToDisplay(self):
         self.elements = [
-            ...
+            Image((50, 50), 100, 100, './imgs/battlescreen.png'),
         ]
 
         y = 0
