@@ -31,23 +31,25 @@ class BattleScreen(Screen):
         #         self.elements.append(Image((x, y), 20, 20, poke.img))
         #         self.elements.append(Label((x, y + 10), 20, 10, poke.name))
 
-        # y = 50
-        # x = 10
+        y = 50
+        x = 10
         for poke in self.trainers[0].pokemon:
             self.elements.append(Image((x, y), 10, 10, poke.img))
             self.elements.append(Label((x, y), 20, 10, poke.name))
-            y = 50
-            x = 10
             x += 10
+            # y = 50
+            # x = 10
+            # x += 10
 
-        # y = 50
-        # x = 60
+        y = 50
+        x = 60
         for poke in self.trainers[1].pokemon:
-            self.elements.append(Image(x, y), 10, 10, poke.img)
-            self.elements.append(Label(x, y), 20, 10, poke.name)
-            y = 50
-            x = 60
+            self.elements.append(Image((x, y), 10, 10, poke.img))
+            self.elements.append(Label((x, y), 20, 10, poke.name))
             x += 10
+            # y = 50
+            # x = 60
+            # x += 10
                 
 class ContinueButton(Button):
     def onclick(self):
