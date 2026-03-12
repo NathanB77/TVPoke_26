@@ -55,6 +55,6 @@ class ContinueButton(Button):
     def onclick(self):
         self.elementsToDisplay = []
         
-
+# have the VS image be the button.
 
 
