@@ -31,21 +31,21 @@ class BattleScreen(Screen):
         #         self.elements.append(Image((x, y), 20, 20, poke.img))
         #         self.elements.append(Label((x, y + 10), 20, 10, poke.name))
 
-        y = 20
+        y = 30
         x = 10
         for poke in self.trainers[0].pokemon:
             self.elements.append(Image((x, y), 10, 10, poke.img))
-            self.elements.append(Label((x, 10), 20, 10, poke.name))
+            self.elements.append(Label((x, 20), 20, 10, poke.name))
             x += 10
             # y = 50
             # x = 10
             # x += 10
 
-        y = 20
+        y = 30
         x = 60
         for poke in self.trainers[1].pokemon:
             self.elements.append(Image((x, y), 10, 10, poke.img))
-            self.elements.append(Label((x, 10), 20, 10, poke.name))
+            self.elements.append(Label((x, 20), 20, 10, poke.name))
             x += 10
             # y = 50
             # x = 60
