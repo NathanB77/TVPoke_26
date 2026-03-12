@@ -53,6 +53,7 @@ class BattleScreen(Screen):
                 
 class ContinueButton(Button):
     def onclick(self):
+        super().__init__((50, 80), 20, 20,     "./imgs/VS.png")
         self.elementsToDisplay = []
         
 # have the VS image be the button.
