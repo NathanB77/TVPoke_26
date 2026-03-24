@@ -55,11 +55,13 @@ class BattleScreen(Screen):
         x = 25
         y = 20
         self.elements.append(Image((x,y), 20, 20, poke.img))
+        self.elements.append(Label((x,15), 20, 10, poke.name, 17, (0, 0, 0)))
 
         poke = self.trainers[0].pokemon[0]
         x = 75
         y = 50
-        self.elements.append(Image((x,y), 20, 20, poke.img))           
+        self.elements.append(Image((x,y), 20, 20, poke.img))
+        self.elements.append(Label((x, 45), 20, 10, poke.name, 17, (0, 0, 0)))           
 
 
 class ContinueButton(Button):
