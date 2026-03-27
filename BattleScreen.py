@@ -55,7 +55,7 @@ class BattleScreen(Screen):
         x = 25
         y = 35
         self.elements.append
-        self.elements.append(Image((x,y), 20, 20, poke.img))
+        self.elements.append(Image((x,y), 25, 25, poke.img))
         self.elements.append(Label((15, 45), 20, 10, poke.name + '\n' + str(poke.hp), 20, (0, 0, 0)))
         self.elements.append(Label((15, 45), 20, 10, poke.name + '\n' + str(poke.hp), 19, (255, 255, 255)))
         
@@ -64,16 +64,30 @@ class BattleScreen(Screen):
         poke = self.trainers[1].pokemon[1]
         x = 75
         y = 35
-        self.elements.append(Image((x,y), 20, 20, poke.img))
+        self.elements.append(Image((x,y), 25, 25, poke.img))
         self.elements.append(Label((85, 45), 20, 10, poke.name + '\n' + str(poke.hp), 20, (0, 0, 0)))
         self.elements.append(Label((85, 45), 20, 10, poke.name + '\n' + str(poke.hp), 19, (255, 255, 255)))  
-                 
 
+        xs = [40, 60]
+        ys = [80, 70]
+
+        moveIndex = 0
+        for x in xs:
+            for y in ys:
+                self.elements.append(Attack(x, y, self.trainers[0].pokemon[0].moves[moveIndex]))
+                 
 
 class Attack(Button):
     def __init__(self, x, y, move):
         self.move = move
-    def onClick(self):
-        ...
+        super().__init__((x, y), 20, 10, move.name)
+    def onClick(self, screen):
+        screen.trainers[1].pokemon[0].takeDamage(self.move)
+        #you'll want that trainer to check and handle fainted pokemon
+        #check if someone won
+        screen.trainers.reverse()
         
 
+def checkHealth(self):
+    for self.trainer in Trainer:
+        self.removeFaintedPokemon()
