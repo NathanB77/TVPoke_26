@@ -7,6 +7,7 @@ class BattleScreen(Screen):
         super().__init__(window, (25, 255, 40))
         self.state = {
             'moveTo': '',
+            'winner': '',
         }
         
 
@@ -17,40 +18,11 @@ class BattleScreen(Screen):
         ]
         
     def elementsToDisplay(self):
+        if self.state['winner'] != 0:
+            return
         self.elements = [
             Image((50, 50), 100, 100, './imgs/battlescreen.png'),
         ]
-
-        # y = 0
-        # #two rows of three
-        # for trainer in self.trainers:
-        #     x = 0
-        #     y += 100/3
-        #     for poke in trainer.pokemon:
-        #         x += 100/4
-        #         self.elements.append(Image((x, y), 20, 20, poke.img))
-        #         self.elements.append(Label((x, y + 10), 20, 10, poke.name))
-
-        # y = 30
-        # x = 10
-        # for poke in self.trainers[0].pokemon:
-        #     self.elements.append(Image((x, y), 15, 15, poke.img))
-        #     self.elements.append(Label((x, 20), 20, 10, poke.name, 17, (0, 0, 0)))
-        #     x += 13
-        #     # y = 50
-        #     # x = 10
-        #     # x += 10
-
-        # y = 30
-        # x = 60
-        # for poke in self.trainers[1].pokemon:
-        #     self.elements.append(Image((x, y), 15, 15, poke.img))
-        #     self.elements.append(Label((x, 20), 20, 10, poke.name, 17, (0, 0, 0)))
-        #     x += 13
-        #     # y = 50
-        #     # x = 60
-        #     # x += 10
-
     
 
 
@@ -81,23 +53,26 @@ class BattleScreen(Screen):
                 moveIndex += 1
                  
 
+    
+
+        
+
 class Attack(Button):
     def __init__(self, x, y, move):
         self.move = move
         super().__init__((x, y), 20, 10, move.name)
     def onClick(self, screen):
-        screen.trainers[0].pokemon[1].takeDamage(self.move)
+        screen.trainers[1].pokemon[1].takeDamage(self.move)
+        screen.checkHealth()
+        screen.trainers[1].removeFaintedPokemon()
         screen.trainers.reverse()
-        # screen.trainers[0].removeFaintedPokemon()
-        # if len(screen.trainers[1]) == 0:
-        #     #the other wins
+        if len(screen.trainers[1]) == 0:
+            screen.state['winner'] = screen.trainers[0]
+            return
 
-
-        #you'll want that trainer to check and handle fainted pokemon
-        #check if someone won
-        # screen.trainers.reverse()
+        
         
 
 
-# def checkWinner(self):
-#     for trainer in self.trainers:
+    # def checkWinner(self):
+    #     for trainer in self.trainers:
