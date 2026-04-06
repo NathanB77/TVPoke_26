@@ -20,19 +20,21 @@ screen = selectScreen ##set screen to be the starting screen
 while True: ##Game loop
     ##Enter code here to handle changes between screens---
     if selectScreen.state["goTo"] == "BATTLE":
-        selectScreen.state["goTo"] = ""
+        selectScreen.state["goTo"] = ''
         pokemonList1 = selectScreen.state["selectedPoke"][0]
         pokemonList2 = selectScreen.state["selectedPoke"][1]
         battleScreen.addTrainers(pokemonList1, pokemonList2)
         screen = battleScreen
 
-    if battleScreen.state['winner'] != '':
-        winScreen.winner = battleScreen.state['winner']
+    if battleScreen.winner != '':
+       winScreen.winner = battleScreen.winner
+       screen = winScreen
+       battleScreen.winner = ''
 
 
 
 
     ##----------------------------------------------------
 
-    window.checkForInput(screen) #checks for inputs on the screen
-    window.update(screen) #updates the window to reflect the new screen
+    window.checkForInput(screen) 
+    window.update(screen) 

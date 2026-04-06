@@ -10,5 +10,6 @@ class WinScreen(Screen):
     def elementsToDisplay(self):
         self.elements = [
             Image((50 , 50), 100, 100, './imgs/Winner.jpg'),
-            Label((20, 20), 50, 50, self.winner + '/n' + 'You won!'),
+            Label((50, 70), 70, 70, str(self.winner.name) + '\n' + 'You won!'),
+            Label((50, 50), 100, 100,'Congratulations!'),
         ]

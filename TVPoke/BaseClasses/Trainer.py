@@ -1,7 +1,8 @@
 import importlib
 
 class Trainer:
-    def __init__(self, pokemon):
+    def __init__(self, pokemon,name):
+        self.name = name
         self.pokemon = []
         for poke in pokemon:
             pokeFile = importlib.import_module("TVPoke.Pokemon." + poke)
